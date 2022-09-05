@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Emanproject.Models.Student>
+
+@{
+    ViewBag.Title = "Students";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New Student", "Create", null, null, new { @class = "text-dark bg-info px-4 py-2 h2 " })
+</p>
+<table class="table table-bordered text-center text-dark mt-4 table-responsive-md table-responsive-sm">
+    <tr class="table-info">
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Class.ClassName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country.CountryName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Date_of_birith)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class.ClassName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.CountryName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_of_birith)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

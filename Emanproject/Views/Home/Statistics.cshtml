@@ -1,0 +1,81 @@
+﻿
+
+@{
+    ViewBag.Title = "Statistics";
+}
+<h2 class="text-dark"># Average age of students</h2>
+<table class="table">
+
+
+    <tr>
+        <th style="font-size:80px; color:red">
+            @ViewBag.AverageAgeOfStudents
+        </th>
+
+    </tr>
+
+
+
+</table>
+
+
+<h2 class="text-dark"># Count of students per class</h2>
+
+<table class="table table-bordered text-center text-dark table-responsive-sm">
+    <tr class="table-primary">
+        <th>
+            Name
+        </th>
+        <th>
+            Number of students per class
+        </th>
+    </tr>
+
+    @foreach (var item in ViewBag.studentsPerClass)
+    {
+        <tr>
+            <td>
+                @item.Name
+
+            </td>
+            <td>
+                @item.Count
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+<h2 class="text-dark"># Count of students per country</h2>
+
+<table class="table table-bordered text-center text-dark table-responsive-sm">
+    <tr class="table-danger">
+        <th>
+            Name
+        </th>
+        <th>
+            Number of students per class
+        </th>
+    </tr>
+
+    @foreach (var item1 in ViewBag.studentsPerCountry)
+    {
+        <tr>
+            <td>
+                @item1.Name
+
+            </td>
+            <td>
+                @item1.Count
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
