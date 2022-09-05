@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Emanproject.Models.Class>
+
+@{
+    ViewBag.Title = "classes";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, null, new { @class = "text-dark bg-warning px-4 py-2 h2 " })
+</p>
+<table class="table table-bordered text-center text-dark mt-4 table-responsive-md table-responsive-sm">
+    <tr class="table-warning">
+        <th>
+            @Html.DisplayNameFor(model => model.ClassName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+    
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
